@@ -4,18 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\pengembalian;
+use App\Models\peminjaman;
 
 class pengembalian_detail extends Model
 {
     use HasFactory;
 
-    public function buku()
-    {
-        return $this->hasOne(buku::class);
-    }
     
-    public function pengembalian() {
-        return $this->belongsTo(pengembalian::class);
+    public function peminjaman() {
+        return $this->belongsTo(peminjaman::class);
     }
 }

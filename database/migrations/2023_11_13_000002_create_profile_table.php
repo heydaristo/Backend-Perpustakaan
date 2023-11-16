@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama_lengkap');
             $table->string('alamat');
             $table->char('no_hp', 13);
-            $table->foreignId('users_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

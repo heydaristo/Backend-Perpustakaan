@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\buku;
 use App\Models\peminjaman_detail;
-use App\Models\pengembalian;
 use App\Models\profile;
 
 class peminjaman extends Model
@@ -16,7 +15,7 @@ class peminjaman extends Model
 
     public function buku()
     {
-        return $this->hasOne(buku::class);
+        return $this->belongsTo(buku::class);
     }
     public function profile()
     {
@@ -24,8 +23,5 @@ class peminjaman extends Model
     }
     public function peminjaman_detail() {
         return $this->hasOne(peminjaman_detail::class);
-    }
-    public function pengembalian() {
-        return $this->hasOne(pengembalian::class);
     }
 }

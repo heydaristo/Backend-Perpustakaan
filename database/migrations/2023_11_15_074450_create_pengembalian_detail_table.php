@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pengembalian_detail', function (Blueprint $table) {
+        Schema::create('pengembalian_details', function (Blueprint $table) {
             $table->id();
             // $table->foreignId('pengembalians_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             // $table->foreignId('buku_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId('profile_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('peminjaman_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->date('tanggal_pengembalian');
             $table->integer('denda');
             $table->timestamps();

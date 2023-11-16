@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\pengarang;
 use App\Models\penerbit;
-use App\Models\pengembalian;
 use App\Models\peminjaman_detail;
+use App\Models\peminjaman;
 
 
 class buku extends Model
@@ -22,12 +22,7 @@ class buku extends Model
     {
         return $this->belongsTo(penerbit::class);
     }
-    public function pengembalian()
-    {
-        return $this->belongsTo(pengembalian::class);
-    }
-    public function peminjaman_detail()
-    {
-        return $this->belongsTo(peminjaman_detail::class);
+    public function peminjam() {
+        return $this->hasOne(peminjam::class);
     }
 }
