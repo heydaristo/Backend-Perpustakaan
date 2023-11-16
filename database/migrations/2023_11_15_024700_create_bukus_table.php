@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('judul_buku');
             $table->foreignId('pengarang_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('penerbit_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->integer('tahun_penerbit');
+            $table->year('tahun_penerbit');
             $table->integer('jumlah');
             
             $table->timestamps();

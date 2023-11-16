@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use App\Models\peminjaman;
-use App\Models\pengembalian;
+use App\Models\profile;
 
 class User extends Authenticatable
 {
@@ -45,10 +44,7 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function peminjaman() {
-        return $this->belongsTo(peminjaman::class);
-    }
-    public function pengembalian() {
-        return $this->belongsTo(pengembalian::class);
+    public function profile() {
+        return $this->hasOne(profile::class);
     }
 }

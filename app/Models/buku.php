@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\pengarang;
 use App\Models\penerbit;
 use App\Models\pengembalian;
+use App\Models\peminjaman_detail;
 
 
 class buku extends Model
@@ -24,5 +25,9 @@ class buku extends Model
     public function pengembalian()
     {
         return $this->belongsTo(pengembalian::class);
+    }
+    public function peminjaman_detail()
+    {
+        return $this->belongsTo(peminjaman_detail::class);
     }
 }

@@ -13,12 +13,10 @@ return new class extends Migration
     {
         Schema::create('pengembalians', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('profile_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('buku_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->date('tanggal_pengembalian');
-            $table->integer('denda');
             // $table->integer('pengembalian_id');
-            $table->foreignId('peminjamans_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId('users_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            // $table->foreignId('users_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
 
             $table->timestamps();
         });
