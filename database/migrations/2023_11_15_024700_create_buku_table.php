@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bukus', function (Blueprint $table) {
+        Schema::create('buku', function (Blueprint $table) {
             $table->id();
             $table->integer('kode_buku');
             $table->string('judul_buku');
             $table->string('deskripsi_buku');
             $table->string('gambar_buku');
-            $table->foreignId('pengarang_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId('penerbit_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('pengarang_id')->constrained(table: 'pengarang', indexName: 'pengarang_buku_id')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('penerbit_id')->constrained(table: 'penerbit', indexName: 'penerbit_id')->cascadeOnDelete()->cascadeOnUpdate();
             $table->year('tahun_penerbit');
             $table->integer('jumlah');
             

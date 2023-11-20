@@ -9,6 +9,8 @@ use App\Models\buku;
 class pengarang extends Model
 {
     use HasFactory;
+    protected $table = "pengarang";
+
 
     public function buku()
     {

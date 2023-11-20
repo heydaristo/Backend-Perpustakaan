@@ -12,6 +12,7 @@ use App\Models\peminjaman;
 
 class buku extends Model
 {
+    protected $table = "buku";
     use HasFactory;
 
     public function pengarang()
